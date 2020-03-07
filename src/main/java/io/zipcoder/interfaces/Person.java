@@ -4,7 +4,11 @@ public class Person {
     final Long id;
     private String name;
 
-    public Person(Long id, String name) {
+    public Person(long id) {
+        this.id = id;
+    }
+
+    public Person(long id, String name) {
         this.id = id;
         this.name = name;
     }

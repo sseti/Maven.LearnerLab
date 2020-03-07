@@ -1,0 +1,50 @@
+package io.zipcoder.interfaces;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class TestInstructor {
+
+    @Test
+    public void testImplementation() {
+
+        Instructor instructor = new Instructor(123L);
+        Assert.assertTrue(instructor instanceof Teacher);
+    }
+
+    @Test
+    public void testInheritance() {
+        Instructor instructor = new Instructor(123L);
+        Assert.assertTrue(instructor instanceof Person);
+
+    }
+
+    @Test
+    public void testTeach() {
+        Student testStudent = new Student(444L, "Jim");
+        double preStudyTime = testStudent.getTotalStudyTime();
+        double numberOfHours = 1.5;
+        double postStudyTime = preStudyTime + numberOfHours;
+        Instructor testInstructor = new Instructor(123L);
+        testInstructor.teach(testStudent, numberOfHours);
+        Assert.assertEquals(postStudyTime, testStudent.getTotalStudyTime(), .0001);
+    }
+
+    @Test
+    public void testLecture() {
+        Instructor instructor = new Instructor(123L);
+        Student studentOne = new Student(444L, "Jim");
+        Student studentTwo = new Student(567L ,"Tim");
+        Learner[] students = {studentOne, studentTwo};
+        double numberOfHours = 2.5;
+        double numberOfHoursPerStudent = numberOfHours / students.length;
+        double preStudyTime1 = studentOne.getTotalStudyTime();
+        double preStudyTime2 = studentTwo.getTotalStudyTime();
+        double postStudyTime1 = preStudyTime1 + (numberOfHoursPerStudent);
+        double postStudyTime2 = preStudyTime1 + (numberOfHoursPerStudent);
+        instructor.lecture(students, numberOfHours);
+        Assert.assertEquals(postStudyTime1, studentOne.getTotalStudyTime(), .001);
+        Assert.assertEquals(postStudyTime2, studentTwo.getTotalStudyTime(), .001);
+    }
+}
+
