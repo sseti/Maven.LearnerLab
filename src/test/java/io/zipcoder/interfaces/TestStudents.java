@@ -9,10 +9,10 @@ public class TestStudents {
     public void instanceTest() {
 
         //Given
-        Student Tim = new Student(1001, "Tim");
-        Student Jim = new Student(1002, "Jim");
-        Student Lim = new Student(1003, "Lim");
-        Student Kim = new Student(1004, "Kim");
+        Student Tim = new Student(1023L, "Tim");
+        Student Jim = new Student(1024L, "Jim");
+        Student Lim = new Student(1025L, "Lim");
+        Student Kim = new Student(1026L, "Kim");
         Students list = Students.getInstance();
         list.add(Tim);
         list.add(Jim);
