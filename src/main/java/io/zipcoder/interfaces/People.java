@@ -15,8 +15,7 @@ public abstract class People <TypeOfPerson extends Person> {
     }
 
     public TypeOfPerson findById(long id) { //changed per leon's lecture
-        for (TypeOfPerson person: personList
-        ) {
+        for (TypeOfPerson person: personList) {
             if(person.getId() == id) {
                 return person;
             }

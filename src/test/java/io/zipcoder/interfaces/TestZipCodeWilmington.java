@@ -34,10 +34,10 @@ public class TestZipCodeWilmington {
 
         //Given
         Students studentList = Students.getInstance();
-        Student kate = new Student((long) 1001, "Kate");
-        Student thao = new Student((long) 1002, "Neela");
-        studentList.add(kate);
-        studentList.add(thao);
+        Student kate = new Student((long) 1023, "Jim");
+        Student thao = new Student((long) 1024, "Tim");
+        studentList.add(jim);
+        studentList.add(tim);
         Instructors instructorlist = Instructors.getInstance();
         Instructor kris = new Instructor(2001);
         instructorlist.add(kris);
