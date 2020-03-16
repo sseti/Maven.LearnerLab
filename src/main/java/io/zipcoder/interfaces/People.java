@@ -2,7 +2,7 @@ package io.zipcoder.interfaces;
 
 import java.util.ArrayList;
 
-public abstract class People <TypeOfPerson extends Person> {
+public class People <TypeOfPerson extends Person> {
 
     protected ArrayList<TypeOfPerson> personList;
 
@@ -14,7 +14,7 @@ public abstract class People <TypeOfPerson extends Person> {
         personList.add(person);
     }
 
-    public TypeOfPerson findById(long id) { //changed per leon's lecture
+    public TypeOfPerson findById(long id) {
         for (TypeOfPerson person: personList) {
             if(person.getId() == id) {
                 return person;
@@ -35,7 +35,9 @@ public abstract class People <TypeOfPerson extends Person> {
         return personList.size();
     }
 
-    public abstract TypeOfPerson[] getArray();
+    public TypeOfPerson[] toArray(){
+        return (TypeOfPerson[]) personList.toArray();
+    }
 
     public void removeAll() {
         personList.clear();
